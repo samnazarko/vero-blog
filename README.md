@@ -1,7 +1,7 @@
 vero-blog
 =========
 
-##install
+## style dev
 
 `npm install`
 
@@ -17,7 +17,7 @@ vero-blog
 
 ## Config
 
-in _config.yml
+setup in _config.yml
 
 url
 
