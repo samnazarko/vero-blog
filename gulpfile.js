@@ -1,9 +1,4 @@
 var gulp = require('gulp'); 
-var del = require('del');
-var merge = require('merge-stream');
-var rev = require('gulp-rev');
-var inject = require('gulp-inject');
-var htmlmin = require('gulp-minify-html');
 var sass = require('gulp-sass');
 var compass = require('gulp-compass');
 var cssmin = require('gulp-cssmin');
@@ -12,15 +7,22 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var cp = require('child_process');
 
 var dist = 'dist/';
+var site = 'dist/_site/';
 var src = 'src/';
 var bower = 'bower_components/';
+
+var messages = {
+    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+};
+
 
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
-      baseDir: "dist"
+      baseDir: "dist/_site"
     }
   });
 });
@@ -38,7 +40,7 @@ gulp.task('style', function () {
     .pipe(prefix())
     .pipe(cssmin())
     .pipe(gulp.dest(dist + 'assets/css'))
-    .pipe(gulp.dest(src + 'assets/css'))
+    .pipe(gulp.dest(site + 'assets/css'))
     .pipe(reload({stream:true}));
     
 });
@@ -60,62 +62,21 @@ gulp.task('js', ['minify'], function () {
   ])
   .pipe(concat('main.js'))
   .pipe(gulp.dest(dist + 'assets/js'))
-  .pipe(gulp.dest(src + 'assets/js'));
+  .pipe(gulp.dest(site + 'assets/js'));
 });
 
-gulp.task('html', function () {
-  return gulp.src(src + '*.html')
-    .pipe(gulp.dest(dist));
+gulp.task('jekyll-build', function (done) {
+    browserSync.notify(messages.jekyllBuild);
+    return cp.spawn('jekyll', ['build'], {stdio: 'inherit', cwd: 'dist' })
+        .on('close', done);
 });
 
-gulp.task('default', ['html', 'style', 'js', 'browser-sync'], function () {
-  gulp.watch(src + "*.html", ['html', reload]);
-  gulp.watch(src + "assets/style/style.*", ['style']);
+gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+    browserSync.reload();
+});
+
+gulp.task('default', ['style', 'js', 'browser-sync'], function () {
+  gulp.watch([dist + "**/*.html", dist + "**/*.md", "!dist/_site/**/*"], ['jekyll-rebuild']);
+  gulp.watch(src + "assets/style/style.scss", ['style']);
   gulp.watch(src + "assets/js/app.js", ['js', reload]);
-});
-
-
-
-
-// BUILD TASKS
-
-gulp.task('clean', ['style', 'js'], function (cb) {
-  del([
-    dist + "assets/js/**",
-    dist + "assets/css/**"
-  ], cb);
-});
-
-gulp.task('revision', ['clean'], function () {
-  var css = gulp.src(src + 'assets/css/style.css')
-    .pipe(rev())
-    .pipe(gulp.dest(dist + 'assets/css'));
-  
-  var js = gulp.src(src + 'assets/js/main.js')
-    .pipe(rev())
-    .pipe(gulp.dest(dist + 'assets/js'));
-  
-  var img = gulp.src(src + 'assets/img/**/*')
-    .pipe(gulp.dest(dist + 'assets/img'));
-  
-  browserSync.reload();
-  return merge(css, js, img);
-});
-
-gulp.task('injection', ['revision'], function () {
-  return gulp.src(src + '*.html')
-    .pipe(inject(gulp.src(dist + "assets/js/main-*.js", {read: false}), {ignorePath: 'dist', addRootSlash: false}))
-    .pipe(inject(gulp.src(dist + "assets/css/style-*.css", {read: false}), {ignorePath: 'dist', addRootSlash: false}))
-    .pipe(htmlmin())
-    .pipe(gulp.dest(dist));
-});
-
-gulp.task('reloadbuild', ['injection'], function () {
-  browserSync.reload;
-});
-
-gulp.task('build', ['reloadbuild', 'browser-sync'], function () {
-  gulp.watch(src + "*.html", ['reloadbuild']);
-  gulp.watch(src + "assets/style/style.*", ['reloadbuild']);
-  gulp.watch(src + "assets/js/app.js", ['reloadbuild']);
 });

@@ -1,5 +1,5 @@
 {
-  "name": "Boilerplate",
+  "name": "vero-blog",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -9,19 +9,12 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^1.7.2",
-    "del": "^1.1.0",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.0.0",
     "gulp-compass": "^2.0.3",
     "gulp-concat": "^2.4.2",
     "gulp-cssmin": "^0.1.6",
-    "gulp-inject": "^1.0.2",
-    "gulp-minify-html": "^0.1.7",
-    "gulp-rename": "^1.2.0",
-    "gulp-rev": "^2.0.1",
-    "gulp-rev-all": "^0.7.1",
     "gulp-sass": "^1.2.4",
-    "gulp-uglify": "^1.0.2",
-    "merge-stream": "^0.1.6"
+    "gulp-uglify": "^1.0.2"
   }
 }

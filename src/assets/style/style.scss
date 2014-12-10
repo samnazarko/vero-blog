@@ -1,8 +1,99 @@
 @import 'normalize-scss/normalize';
-@import 'lib/grid';
+@import 'lib/hyde';
+
+$font-stack: "Lato", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+$dark: #001F3F;
+$green: #51bc9b;
+$lgrey: #fafafa;
+$lgrey2: #e5e5e5;
+$grey: #767a7e;
+
+$link: $green;
+$s-color: $lgrey2;
 
 html {
-  width: 100%;
-  height: 70%;
-  background-color: red;
+  font-family: $font-stack;
+  font-size: 105%;
+}
+body {
+  color: $dark;
+  background-color: $lgrey;
+  line-height: 1.5em;
+}
+
+a {
+  color: $link;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $dark;
+  font-weight: 400;
+}
+.page-title, .post-title, .post-title a {
+  color: $dark;
+}
+
+.sidebar {
+  background-color: $dark;
+  color: $s-color;
+  
+  .sidebar-about {
+    h1 {
+      font-family: $font-stack;
+      font-size: 200%;
+      font-weight: 400;
+      color: $s-color;
+    }
+    .lead {
+      font-weight: 300;
+      font-size: 105%;
+      color: $s-color;
+      margin: 1em 0;
+    }
+    a {
+      font-weight: 400;
+      
+    }
+  }
+  a {
+    color: $s-color;
+    font-weight: 300;
+  }
+  .sidebar-nav a {
+    color: $link;
+  }
+}
+
+.post-date {
+  font-size: 90%;
+  color: $grey;
+}
+
+
+@media (min-width: 64em) {
+  .content {
+    max-width: 50rem;
+    margin-left: 17rem;
+    margin-right: 2rem;
+  }
+}
+
+
+@media (min-width: 48em) {
+  .sidebar {
+    width: 15rem;
+    
+    .sidebar-sticky {
+      position: absolute;
+      right: 0.5rem;
+      top: 2.5rem;
+      left: 0.5rem;
+    }
+  }
+  .content {
+    max-width: 50rem;
+    margin-left: 17rem;
+    margin-right: 2rem;
+  }
 }
