@@ -1,0 +1,15 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Vero Blog
+tagline:          'Vero Blog'
+description:      'Keep up to date on Vero shipping, whatever just read dude'
+url:              http://shipping.osmc.tv
+paginate:         5
+baseurl:          /
