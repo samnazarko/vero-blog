@@ -9,12 +9,6 @@ vero-blog
 
 `gulp`
 
-
-## Deploy to gh-pages
-*Commit master first*
-
-`git subtree push --prefix dist origin gh-pages`
-
 ## Config
 
 setup in _config.yml
