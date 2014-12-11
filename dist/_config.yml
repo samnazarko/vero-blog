@@ -7,9 +7,9 @@ permalink:        pretty
 relative_permalinks: true
 
 # Setup
-title:            Vero Blog
-tagline:          'Vero Blog'
-description:      'Keep up to date on Vero shipping, whatever just read dude'
-url:              http://shipping.osmc.tv
+title:            Vero News
+tagline:          'Vero news'
+description:      'Stay up to date with the latest Vero developments as they happen!'
+url:              http://progress.getvero.tv
 paginate:         5
 baseurl:          /
