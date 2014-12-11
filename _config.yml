@@ -7,9 +7,9 @@ permalink:        pretty
 relative_permalinks: true
 
 # Setup
-title:            Vero Blog
-tagline:          'Your Vero'
-description:      'Stay up to date with the latest Vero developments'
+title:            Vero News
+tagline:          'Vero News'
+description:      'Stay up to date with the latest Vero developments as they happen!'
 url:              http://progress.getvero.tv
 paginate:         5
 baseurl:          /
