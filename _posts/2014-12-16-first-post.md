@@ -2,8 +2,10 @@
 published: true
 ---
 
-## Keeping you updated
-
+----
+-layout: post
+-title: Keeping you updayed
+----
 Hi!
 
 It's been three weeks since I launched the Vero campaign and it's going really well. In fact, we've completely sold out our first batch! As a precaution, I've revised shipping dates for future orders to be early February. It's important I get the current orders out there to make sure I don't end up swamped!
