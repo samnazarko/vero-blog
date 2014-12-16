@@ -1,10 +1,7 @@
 ---
 published: true
----
-
----
--layout: post
--title: Keeping you updayed
+layout: post
+title: Keeping you updated
 ---
 Hi!
 
