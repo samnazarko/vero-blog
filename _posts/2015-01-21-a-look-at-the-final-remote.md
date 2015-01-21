@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Peripheral Perfection: the remote
+title: Peripheral Perfection. the remote
 ---
 Hi everyone
 
@@ -11,7 +11,7 @@ The new remote designs are finalised and are well in production now. I hope to h
 
 Here's the final design:
 
-![The new OSMC remote](http://progress.getvero.tv/assets/remote.png)
+![The new OSMC remote](http://progress.getvero.tv/assets/remote.png "OSMC Remote")
 
 A lot of remotes out there work with Kodi, but they fall short:
 
