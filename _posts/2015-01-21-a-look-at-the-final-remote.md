@@ -11,7 +11,7 @@ The new remote designs are finalised and are well in production now. I hope to h
 
 Here's the final design:
 
-(http://progress.getvero.tv/assets/remote.png)
+![The new OSMC remote](http://progress.getvero.tv/assets/remote.png "OSMC Remote")
 
 A lot of remotes out there work with Kodi, but they fall short:
 
