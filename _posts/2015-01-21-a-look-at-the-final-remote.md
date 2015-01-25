@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Peripheral Perfection. the remote
+title: Peripheral Perfection - the remote
 ---
 Hi everyone
 
