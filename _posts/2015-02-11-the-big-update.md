@@ -11,12 +11,12 @@ Over the last few weeks, I've been very hands on in making sure that everything 
 
 Power supplies are unregulated and often don't adhere to their advertised specifications. Most people used their microUSB phone chargers when the Pi first came out and this was the first time they were really stress tested. Charging a phone does not take a lot of current and as a result manufacturers are often not too concerned whether their power supply performs as advertised. If you've used the Raspberry Pi, you'll likely know about the importance of a good power supply. Without one you can experience lockups, crashes and issues with connected peripherals such as hard drives and WiFi dongles. This would be simply unaccceptable for Vero.
 
-As you can see [here] (http://www.righto.com/2012/10/a-dozen-usb-chargers-in-lab-apple-is.html), there are a lot of bad power supplies out there. We are lucky in the sense that all of our outputs on Vero are digital (and thus less prone to power supply noise) however it is vital that we have as stable a power supply as possible.
+As you can see [here] (http://www.righto.com/2012/10/a-dozen-usb-chargers-in-lab-apple-is.html), there are a lot of bad power supplies out there. We are lucky in the sense that all of our outputs on Vero are digital (and thus less vulnerable to power supply noise) however it is vital that we have as stable a power supply as possible.
 
 I have aggressively tested over a dozen power supplies myself. When doing so, here's what I was on the look out for:
 
 * Noise -- how efficient is the charger and will it affect any peripherals connected to the Vero?
-* Regulation -- are there any abnormal spikes in the current when the Vero's demand for power fluctuates?
+* Regulation -- are there any abnormal spikes in the current when the Vero's demand for power fluctuates? We want to avoid any power surges that could damage connected peripherals as well.
 
 Initially, we had something that looked a little like this:
 
@@ -51,9 +51,9 @@ Good question. It turns out retail packaging has actually been the tricky part o
 ![OSMC Box](http://progress.getvero.tv/assets/box1.JPG "OSMC Box")
 ![OSMC Box](http://progress.getvero.tv/assets/box2.JPG "OSMC Box")
 
-Unfortunately, Chinese New Year is fast approaching and we would not have been able to do even a fifth of our orders if we had waited, so we will likely ship in some plainer boxes for this initial run. I figure it's more important everyone gets their hand on a device first rather than wait for the box. I know some of you are itching to try Vero!
+Unfortunately, Chinese New Year is fast approaching and we would not have been able to do even a fifth of our orders if I had waited, so I will likely ship in some plainer boxes for this initial run. I figure it's more important everyone gets their hand on a device first rather than wait for the box. I know some of you are itching to try Vero!
 
-I did plan packaging way in advance of Chinese New Year. Our manufacturer repeatedly sent me new templates as they realised we needed to change dimensions and only right at the end told me they would not be able to fulfill the full order in time. 
+I did plan packaging way in advance of Chinese New Year. Our manufacturer repeatedly sent me new templates as they realised I needed to change dimensions and only right at the end told me they would not be able to fulfill the full order in time. 
 
 ## So what am I doing in the mean time?
 
@@ -65,8 +65,8 @@ Vero can run Android as well. As a result, you will be able to run Android appli
 
 ## Wrap up
 
-Please make sure your shipping information is up to date. You can do this by going to https://osmc.tv/shop/my-account. Some of you have asked
-why the Vero is showing as 129.99 when you paid $199.99. That is a bug in our ordering system (it is displaying the former price in pounds) and you will receive a proper invoice as we ship.
+Please make sure your shipping information is up to date. You can do this by clicking [here] (https://osmc.tv/shop/my-account). Some of you have asked
+why the Vero is showing as 129.99 when you paid $199.99. That is a bug in our ordering system (it is displaying the former price in pounds) and you will receive a proper invoice as I ship.
 
 Best wishes, and if you have any questions, please email sam@osmc.tv
 
